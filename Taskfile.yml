@@ -1,0 +1,22 @@
+version: "3"
+
+tasks:
+  up:
+    summary: docker compose upを実行します
+    cmds:
+      - docker compose up -d --wait
+
+  down:
+    summary: docker compose downを実行します
+    cmds:
+      - docker compose down
+
+  destory:
+    summary: dockerで作成したものを全て削除します
+    cmds:
+      - docker compose down --rmi all --volumes --remove-orphans
+
+  logs:
+    summary: コンテナのログを出力します
+    cmds:
+      - docker logs sql_railway_setup_container

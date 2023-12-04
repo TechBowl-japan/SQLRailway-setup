@@ -1,0 +1,10 @@
+services:
+  colab:
+    image: asia-docker.pkg.dev/colab-images/public/runtime
+    container_name: sql_railway_setup_container
+    ports:
+      - "127.0.0.1:9000:8080"
+    volumes:
+      - type: "bind"
+        source: "./"
+        target: "/content/SQLRailway-setup/"
