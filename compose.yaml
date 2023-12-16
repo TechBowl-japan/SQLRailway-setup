@@ -8,3 +8,22 @@ services:
       - type: "bind"
         source: "./"
         target: "/content/SQLRailway-setup/"
+
+  # NOTE: SQLの動作確認などを好きなようにするためのイメージ
+  mysql:
+    image: mysql:8.0
+    container_name: sql_railway_dev_db
+    ports:
+      - "127.0.0.1:3306:3306"
+    environment:
+      MYSQL_DATABASE: sql_railway
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: mysql
+    volumes:
+      - type: "volume"
+        source: v_mysql_data
+        target: /var/lib/mysql
+
+volumes:
+  v_mysql_data: ~

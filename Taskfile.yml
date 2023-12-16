@@ -4,7 +4,7 @@ tasks:
   up:
     summary: docker compose upを実行します
     cmds:
-      - docker compose up -d --wait
+      - docker compose up -d --wait {{.CLI_ARGS}}
 
   down:
     summary: docker compose downを実行します
