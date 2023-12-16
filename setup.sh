@@ -2,7 +2,7 @@
 
 # Install MySQL
 apt update > /dev/null
-apt -y -qq install mysql-server mysql-client > /dev/null
+apt -y -qq install mysql-server-8.0 mysql-client > /dev/null
 service mysql start > /dev/null
 
 # Set up root user
