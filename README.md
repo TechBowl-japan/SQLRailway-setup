@@ -9,11 +9,11 @@ SQLRailwayに取り組む際のSQLのインストールなどのセットアッ�
 ColaboratoryのDockerイメージを使うのでDockerが必須です。
 
 ```shell
-docker compose up -d --wait
+docker compose up -d --wait colab
 
 // or
 
-task up
+task up -- colab
 ```
 
 コンテナが立ち上がるまで結構時間かかります。
