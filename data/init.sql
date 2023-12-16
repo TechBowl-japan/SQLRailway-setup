@@ -35,13 +35,12 @@ CREATE TABLE students (
 );
 
 CREATE TABLE grades (
-  id int NOT NULL AUTO_INCREMENT COMMENT 'ID',
   subject varchar(256) NOT NULL COMMENT '科目',
   user_id int NOT NULL COMMENT 'ユーザーID',
   created_at datetime,
   updated_at datetime,
 
-  PRIMARY KEY (id),
+  PRIMARY KEY (subject, user_id),
   FOREIGN KEY (user_id)
   REFERENCES users(id)
 );
