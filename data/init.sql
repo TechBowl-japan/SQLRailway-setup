@@ -59,3 +59,12 @@ CREATE TABLE purchase_histories(
   FOREIGN KEY (user_id)
   REFERENCES users(id)
 );
+
+CREATE TABLE fruits (
+    id int NOT NULL AUTO_INCREMENT COMMENT 'ID',
+    name varchar(256) NOT NULL COMMENT '名前',
+    created_at datetime,
+    updated_at datetime,
+
+    PRIMARY KEY (id)
+);
