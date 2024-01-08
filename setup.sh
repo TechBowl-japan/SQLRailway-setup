@@ -9,6 +9,6 @@ service mysql start > /dev/null
 mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root'"
 
 # Set up database
-mysql -u root -proot -e "source /content/SQLRailway-setup/data/init.sql"
+mysql -u root -proot -e "source /content/SQLRailway-setup/data/init.sql" --local-infile=1
 
 pip -q install PyMySQL
