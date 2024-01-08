@@ -9,7 +9,7 @@ services:
         source: "./"
         target: "/content/SQLRailway-setup/"
 
-  # NOTE: SQLの動作確認などを好きなようにするためのイメージ
+  # SQLの動作確認などを好きなようにするためのイメージ
   mysql:
     image: mysql:8.0
     container_name: sql_railway_dev_db
@@ -24,6 +24,9 @@ services:
       - type: "volume"
         source: v_mysql_data
         target: /var/lib/mysql
+      - type: "bind"
+        source: "./"
+        target: "/content/SQLRailway-setup/"
 
 volumes:
   v_mysql_data: ~
