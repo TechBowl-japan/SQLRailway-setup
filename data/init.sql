@@ -38,12 +38,13 @@ CREATE TABLE students (
 
 CREATE TABLE grades (
   subject varchar(256) NOT NULL COMMENT '科目',
-  user_id int NOT NULL COMMENT 'ユーザーID',
+  score int NOT NULL COMMENT '点数',
+  student_id int NOT NULL COMMENT '学生ID',
   created_at datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
-  PRIMARY KEY (subject, user_id),
-  FOREIGN KEY (user_id)
+  PRIMARY KEY (subject, student_id),
+  FOREIGN KEY (student_id)
   REFERENCES users(id)
 );
 
@@ -81,11 +82,7 @@ FIELDS TERMINATED BY ',' (id, name);
 
 LOAD DATA LOCAL INFILE '/content/SQLRailway-setup/data/grades.csv'
 INTO TABLE grades
-FIELDS TERMINATED BY ',' (subject, user_id);
-
-LOAD DATA LOCAL INFILE '/content/SQLRailway-setup/data/players.csv'
-INTO TABLE players
-FIELDS TERMINATED BY ',' (id, name, team);
+FIELDS TERMINATED BY ',' (subject, score, student_id);
 
 LOAD DATA LOCAL INFILE '/content/SQLRailway-setup/data/players.csv'
 INTO TABLE players
@@ -98,4 +95,3 @@ FIELDS TERMINATED BY ',' (id, user_id, product_name, product_category, price, pu
 LOAD DATA LOCAL INFILE '/content/SQLRailway-setup/data/students.csv'
 INTO TABLE students
 FIELDS TERMINATED BY ',' (id, name, school_level);
-
