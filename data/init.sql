@@ -29,7 +29,7 @@ CREATE TABLE players (
 CREATE TABLE students (
   id int NOT NULL AUTO_INCREMENT COMMENT 'ID',
   name varchar(256) NOT NULL COMMENT '名前',
-  school_level int NOT NULL COMMENT '学年',
+  grade_level int NOT NULL COMMENT '学年',
   created_at datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
@@ -94,4 +94,4 @@ FIELDS TERMINATED BY ',' (id, user_id, product_name, product_category, price, pu
 
 LOAD DATA LOCAL INFILE '/content/SQLRailway-setup/data/students.csv'
 INTO TABLE students
-FIELDS TERMINATED BY ',' (id, name, school_level);
+FIELDS TERMINATED BY ',' (id, name, grade_level);
