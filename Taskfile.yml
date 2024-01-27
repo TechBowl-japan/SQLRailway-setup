@@ -11,7 +11,7 @@ tasks:
     cmds:
       - docker compose down
 
-  destory:
+  clean:
     summary: dockerで作成したものを全て削除します
     cmds:
       - docker compose down --rmi all --volumes --remove-orphans
